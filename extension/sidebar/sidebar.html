@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Summary</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <!-- Header -->
+    <div class="sidebar-header">
+      <h2>Job Summary</h2>
+      <button id="closeBtn" class="close-btn" aria-label="Close sidebar">×</button>
+    </div>
+
+    <!-- Control Panel -->
+    <div class="control-panel">
+      <div class="control-group">
+        <label for="lengthSelect">Length</label>
+        <select id="lengthSelect">
+          <option value="short">Short</option>
+          <option value="medium" selected>Medium</option>
+          <option value="detailed">Detailed</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="focusSelect">Focus</label>
+        <select id="focusSelect">
+          <option value="balanced" selected>Balanced</option>
+          <option value="skills">Skills</option>
+          <option value="qualifications">Qualifications</option>
+          <option value="responsibilities">Responsibilities</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="formatSelect">Format</label>
+        <select id="formatSelect">
+          <option value="bullets" selected>Bullets</option>
+          <option value="paragraph">Paragraph</option>
+        </select>
+      </div>
+
+      <button id="summarizeBtn" class="summarize-btn">
+        Summarize
+      </button>
+    </div>
+
+    <!-- Summary Display Area -->
+    <div id="summaryArea" class="summary-area">
+      <div class="welcome-message">
+        <svg class="welcome-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <p>Click <strong>Summarize</strong> to analyze this job posting</p>
+      </div>
+    </div>
+
+    <!-- Loading State -->
+    <div id="loadingState" class="loading-state" style="display: none;">
+      <div class="spinner"></div>
+      <p>Analyzing job posting...</p>
+    </div>
+
+    <!-- Error State -->
+    <div id="errorState" class="error-state" style="display: none;">
+      <svg class="error-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <p id="errorMessage">Something went wrong</p>
+      <button id="retryBtn" class="retry-btn">Try Again</button>
+    </div>
+  </div>
+
+  <script src="sidebar.js"></script>
+</body>
+</html>
